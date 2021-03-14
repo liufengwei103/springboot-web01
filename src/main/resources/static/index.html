@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+    <!--静态资源下的index.html为欢迎页，访问路径：http://localhost:8080/-->
+    <h1>欢迎您！</h1>
+
+    测试Rest访问风格：<br/>
+    <form action="/user" method="get">
+        <input value="REST-GET 提交" type="submit">
+    </form>
+
+    <form action="/user" method="post">
+        <input value="REST-POST 提交" type="submit">
+    </form>
+
+    <!--
+        表单默认只有get和post提交（客户端工具可以发put和delete），put和delete提交需要设置：
+        （1）spring.mvc.hiddenmethod.filter.enabled=true
+        （2）添加隐藏参数_method
+    -->
+    <form action="/user" method="post">
+        <input name="_method" type="hidden" value="put">
+        <input name="_m" type="hidden" value="put">
+        <input value="REST-PUT 提交" type="submit">
+    </form>
+
+    <form action="/user" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <input value="REST-DELETE 提交" type="submit">
+    </form>
+
+<!--    表单提交-->
+    <form action="/body" method="post">
+        <input name="username" value="liufengwei">
+        <input name="password" value="123456">
+        <input value="表单提交" type="submit">
+    </form>
+
+    <form action="/saveUser" method="post">
+        <input name="username" value="liufengwei">
+        <input name="age" value="18">
+        <input name="birth" value="2019/12/10">
+<!--        <input name="pet.name" value="阿猫">-->
+<!--        <input name="pet.age" value="3">-->
+        <input name="pet" value="阿猫，3">
+        <input value="表单提交" type="submit">
+    </form>
+</body>
+</html>

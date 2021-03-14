@@ -1,0 +1,10 @@
+
+#spring:
+#  mvc:
+#    static-path-pattern: /res/** #静态资源访问前缀
+#  web:
+#    resources:
+#      static-locations: [classpath:/haha/] #改变默认资源路径
+##      add-mappings: false  #禁用所有静态资源映射
+#      cache:
+#        period: 11000  #静态资源缓存时间，单位s
